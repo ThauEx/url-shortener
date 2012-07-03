@@ -12,5 +12,4 @@ Maybe you have to correct the RewriteBase in the .htaccess file.
 Admin
 -----
 To access the administration panel, goto to http://example.com/admin/ (don't forget trailing slash!)
-When you want to protect the admin panel from unauthorized access, you have to add a .htaccess protection,
-since it doesn't have an own protection.
+When you want to protect the admin panel from unauthorized access, comment out the last lines in the .htaccess and correct the path to your .htpasswd
