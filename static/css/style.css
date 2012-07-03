@@ -21,3 +21,22 @@ table.table-sorter thead tr .headerSortDown {
 body {
 	padding-top: 60px;
 }
+
+.tag {
+	width: 110px;
+}
+
+.overflow {
+	max-width: 210px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
+
+.edit {
+	width: 70px;
+}
+
+.remove {
+	width: 60px;
+}

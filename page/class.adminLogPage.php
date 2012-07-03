@@ -229,13 +229,13 @@ EOT;
 				$this->return .= <<<EOT
 				<tr>
 					<td>{$row['id']}</td>
-					<td><a href="{$siteUrl}{$row['random']}" target="_blank">{$row['random']}</a></td>
+					<td class="tag"><a href="{$siteUrl}{$row['random']}" target="_blank">{$row['random']}</a></td>
 					<td>{$row['hits']}</td>
-					<td><div title="{$row['url']}" class="url"><a href="{$row['url']}" target="_blank">{$row['url']}</a></div></td>
+					<td class="overflow"><a href="{$row['url']}" target="_blank" title="{$row['url']}">{$row['url']}</a></td>
 					<!--<td><a href="http://www.whois.sc/{$row['ip']}">{$row['ip']}</a></td>-->
-					<td><div title="{$row['note']}" class="note">{$row['note']}</div></td>
-					<td><a href="{$siteUrl}admin/log/edit/{$row['id']}">Bearbeiten</a></td>
-					<td><a href="{$siteUrl}admin/log/remove/{$row['id']}">Löschen</a></td>
+					<td class="note"><span title="{$row['note']}">{$row['note']}</span></td>
+					<td class="edit"><a href="{$siteUrl}admin/log/edit/{$row['id']}">Bearbeiten</a></td>
+					<td class="remove"><a href="{$siteUrl}admin/log/remove/{$row['id']}">Löschen</a></td>
 				</tr>
 
 EOT;
