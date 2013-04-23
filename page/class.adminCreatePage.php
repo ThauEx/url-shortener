@@ -35,14 +35,14 @@ class AdminCreatePage extends AdminPage
 
 			$url = $_POST['url'];
 
-			$queryParams = array( 
+			$queryParams = array(
 				':random' => strtolower($random)
 			);
 
 			$sqlQuery = "SELECT random
-						 FROM urls 
-						 WHERE lower(random) = :random"; 
-			$stmt = Database::getInstance()->prepare($sqlQuery); 
+						 FROM urls
+						 WHERE lower(random) = :random";
+			$stmt = Database::getInstance()->prepare($sqlQuery);
 			$stmt->execute($queryParams);
 
 			if ($stmt->rowCount() > 0)
@@ -59,11 +59,10 @@ EOT;
 				$siteUrl = config::SITE_URL;
 				$this->return .= <<<EOT
 		<p>Erstelle kurz URL mit der zufälligen Zeichenkette: <strong>{$random}</strong></p>
-		<p>und wandel die URL um:<br /><span style="word-wrap: break-word" width="100">{$url}</span></p>
-		<p>To the URL:<br /><a href="{$siteUrl}{$random}">{$siteUrl}{$random}</a></p>
+		<p>und wandel die URL um in:<br /><span style="word-wrap: break-word" width="100"><a href="{$url}">{$url}</a></span></p>
 EOT;
 
-				$queryParams = array( 
+				$queryParams = array(
 					':random' => $random,
 					':url' => $url,
 					':ip' => $_SERVER['REMOTE_ADDR'],
@@ -71,7 +70,7 @@ EOT;
 				);
 
 				$sqlQuery = "INSERT INTO urls (random, url, ip, note)
-							 VALUES (:random, :url, :ip, :note)"; 
+							 VALUES (:random, :url, :ip, :note)";
 				$stmt = Database::getInstance()->prepare($sqlQuery);
 				$stmt->execute($queryParams);
 
@@ -87,7 +86,7 @@ EOT;
 		{
 			$siteUrl = config::SITE_URL;
 			$this->return .= <<<EOT
-		<form class="form-horizontal" name="form" method="post" action="{$siteUrl}admin/create">
+		<form class="form-horizontal" name="form" method="post" action="{$siteUrl}admin/create/">
 			<fieldset>
 				<legend>Kurz Url erstellen</legend>
 				<div class="control-group">

@@ -44,14 +44,14 @@ class AdminLogPage extends AdminPage
 
 		else
 		{
-			$queryParams = array( 
+			$queryParams = array(
 				':id' => $this->values[0]
 			);
 
 			$sqlQuery = "SELECT COUNT(*)
 						 FROM urls
 						 WHERE id = :id";
-			$stmt = Database::getInstance()->prepare($sqlQuery); 
+			$stmt = Database::getInstance()->prepare($sqlQuery);
 			$stmt->execute($queryParams);
 
 			if ($stmt->fetchColumn() == 0)
@@ -62,8 +62,8 @@ class AdminLogPage extends AdminPage
 			else
 			{
 				$sqlQuery = "DELETE FROM urls
-							 WHERE id = :id"; 
-				$stmt = Database::getInstance()->prepare($sqlQuery); 
+							 WHERE id = :id";
+				$stmt = Database::getInstance()->prepare($sqlQuery);
 				$stmt->execute($queryParams);
 
 				$this->return = "<div class='alert alert-success'>ID " . $this->values[0] . " erfolgreich gelöscht. <a href='" . config::SITE_URL . "admin/log/'>Weiter &raquo;</a></div>";
@@ -82,7 +82,7 @@ class AdminLogPage extends AdminPage
 		{
 			if (isset($_POST['edit']))
 			{
-				$queryParams = array( 
+				$queryParams = array(
 					':id' => $this->values[0],
 					':url' => $_POST['url'],
 					':note' => $_POST['note'],
@@ -95,8 +95,8 @@ class AdminLogPage extends AdminPage
 								 note = :note,
 								 random = :random,
 								 hits = :hits
-							 WHERE id = :id "; 
-				$stmt = Database::getInstance()->prepare($sqlQuery); 
+							 WHERE id = :id ";
+				$stmt = Database::getInstance()->prepare($sqlQuery);
 				$stmt->execute($queryParams);
 
 				$this->return = "<div class='alert alert-success'>ID " . $this->values[0] . " erfolgreich aktualisiert. <a href='" . config::SITE_URL . "admin/log/'>Weiter &raquo;</a></div>";
@@ -104,14 +104,14 @@ class AdminLogPage extends AdminPage
 
 			else
 			{
-				$queryParams = array( 
+				$queryParams = array(
 					':id' => $this->values[0]
 				);
 
 				$sqlQuery = "SELECT COUNT(*)
 							 FROM urls
 							 WHERE id = :id";
-				$stmt = Database::getInstance()->prepare($sqlQuery); 
+				$stmt = Database::getInstance()->prepare($sqlQuery);
 				$stmt->execute($queryParams);
 
 				if ($stmt->fetchColumn() == 0)
@@ -124,7 +124,7 @@ class AdminLogPage extends AdminPage
 					$sqlQuery = "SELECT *
 								 FROM urls
 								 WHERE id = :id";
-					$stmt = Database::getInstance()->prepare($sqlQuery); 
+					$stmt = Database::getInstance()->prepare($sqlQuery);
 					$stmt->execute($queryParams);
 
 					while ($row = $stmt->fetch())
@@ -200,8 +200,8 @@ EOT;
 		$queryParams = array();
 
 		$sqlQuery = "SELECT COUNT(*)
-					 FROM urls"; 
-		$stmt = Database::getInstance()->prepare($sqlQuery); 
+					 FROM urls";
+		$stmt = Database::getInstance()->prepare($sqlQuery);
 		$stmt->execute($queryParams);
 
 		if ($stmt->fetchColumn() == 0)
@@ -218,8 +218,8 @@ EOT;
 		{
 			$sqlQuery = "SELECT *
 						 FROM urls
-						 ORDER BY id ASC"; 
-			$stmt = Database::getInstance()->prepare($sqlQuery); 
+						 ORDER BY id ASC";
+			$stmt = Database::getInstance()->prepare($sqlQuery);
 			$stmt->execute($queryParams);
 
 			$count = 1;

@@ -16,7 +16,7 @@ class AdminPage extends Page
 
 		else
 		{
-			$this->_renderer();			
+			$this->_renderer();
 		}
 	}
 
@@ -31,8 +31,8 @@ class AdminPage extends Page
 <link type="text/css" href="<?php echo config::SITE_URL; ?>static/css/style.css" rel="stylesheet" />
 <link type="text/css" href="<?php echo config::SITE_URL; ?>static/css/bootstrap.css" rel="stylesheet">
 <link type="text/css" href="<?php echo config::SITE_URL; ?>static/css/bootstrap-responsive.css" rel="stylesheet">
-<script type='text/javascript' src='<?php echo config::SITE_URL; ?>static/js/jquery.js'></script> 
-<script type='text/javascript' src='<?php echo config::SITE_URL; ?>static/js/bootstrap.min.js'></script> 
+<script type='text/javascript' src='<?php echo config::SITE_URL; ?>static/js/jquery.js'></script>
+<script type='text/javascript' src='<?php echo config::SITE_URL; ?>static/js/bootstrap.min.js'></script>
 <?php echo $this->js; ?>
 </head>
 <body>

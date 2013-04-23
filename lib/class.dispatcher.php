@@ -132,7 +132,7 @@ class Dispatcher {
 		}
 
 		$pageURL .= "://";
-		if ($_SERVER["SERVER_PORT"] == "80")
+		if (in_array($_SERVER["SERVER_PORT"], array("80", "443")))
 		{
 			$pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
 		}
